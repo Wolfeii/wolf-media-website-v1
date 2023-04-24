@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './input.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Header from './components/header';
 import Maintenance from './components/maintenance';
 import Footer from './components/footer';
-import Contact from './components/contact';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

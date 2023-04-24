@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import Button, { Type } from './common/button';
 
 
@@ -64,16 +63,16 @@ export const Footer = () => {
                             <li className='mr-4'>
                                 <a className='underline' href='/kontakt'>Kontakt</a>
                             </li>
-                            <li className='before:content-["\2219"] before:mr-4 ml-4'>
+                            <li className='before:content-["\u2219"] before:mr-4 ml-4'>
                                 <a className='underline' href='/jobb'>Jobb</a>
                             </li>
-                            <li className='before:content-["\2219"] before:mr-4 ml-4'>
+                            <li className='before:content-["\u2219"] before:mr-4 ml-4'>
                                 <a className='underline' href='/villkor'>Villkor</a>
                             </li>
-                            <li className='before:content-["\2219"] before:mr-4 ml-4'>
+                            <li className='before:content-["\u2219"] before:mr-4 ml-4'>
                                 <a className='underline' href='/integritetspolicy'>Integritetspolicy</a>
                             </li>
-                            <li className='before:content-["\2219"] before:mr-4 ml-4'>
+                            <li className='before:content-["\u2219"] before:mr-4 ml-4'>
                                 <a className='underline' href='/cookies'>Cookie Policy</a>
                             </li>
                         </ul>
