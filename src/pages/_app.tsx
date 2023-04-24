@@ -1,9 +1,18 @@
-import type { AppProps } from "next/app";
+import '../globals.css'
 
-import '../input.css'
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
 
-export const App = ({Component, pageProps }: AppProps) => {
-    return (
-        <Component {...pageProps}/>
-    );
+export default function App({Component, pageProps}: AppProps) {
+	return (
+		<>
+			<Head>
+				<title>Wolfeiii Media</title>
+				<meta content="width=device-width, initial-scale=1" name="viewport" />
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+
+			<Component {...pageProps} />
+		</>
+	);
 }

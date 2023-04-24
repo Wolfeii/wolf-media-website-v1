@@ -1,4 +1,5 @@
 import { useScrollDirection } from '../utilities/scroll';
+import Image from 'next/image'
 import Logo from "../logo.svg"
 
 export function Header(): JSX.Element {
@@ -8,7 +9,7 @@ export function Header(): JSX.Element {
         <div id='header' className={`header sticky ${ scrollDirection === "down" ? "-top-24" : "top-0"} shadow-navbar h-24 z-[2] bg-light transition-all duration-[750ms]`}>
             <div id='container' className='container items-center flex justify-between mx-auto max-w-[1600px] px-8'>
                 <a id='logo' href='/' className='logo items-center flex'>
-                    <img className='logo h-24 w-24' height={48} src={Logo} alt='Logo'/>
+                    <Image priority src={Logo} className='logo h-24 w-24' alt=''/>
                     <div id='logo__text' className='logo__text font-bold leading-normal font-default text-dark flex'>
                         <span className='text-2xl uppercase relative'>Wolfeiii</span>
                         <span className='relative'>^</span>

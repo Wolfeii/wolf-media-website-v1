@@ -1,13 +1,14 @@
-import Footer from "../components/footer";
-import Header from "../components/header";
-import Maintenance from "../components/maintenance";
+import React from 'react';
+import Header from '../components/header';
+import Maintenance from '../components/maintenance';
+import Footer from '../components/footer';
 
-export const HomePage = () => {
+export default function Home() {
   return (
     <div>
       <Header/>
       <Maintenance/>
       <Footer/>
     </div>
-  );
+  )
 }
