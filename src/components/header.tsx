@@ -1,22 +1,49 @@
+
 import { useScrollDirection } from '../utilities/scroll';
 import Image from 'next/image'
 import Logo from "../logo.svg"
+import { useState } from 'react';
+import { Menu, X } from 'react-feather';
+
+const LINKS = [
+    {name: 'Arbeten', to: '/arbeten'},
+    {name: 'Tjänster', to: '/tjanster'},
+    {name: 'Nyheter & Insikter', to: '/nyheter'},
+    {name: 'Karriärer', to: '/karriarer'},
+    {name: 'Kontakt', to: '/kontakt'}
+]
 
 export function Header(): JSX.Element {
+    const [menuOpen, setMenuOpen] = useState(false);
     const scrollDirection = useScrollDirection();
 
     return (
-        <div id='header' className={`header sticky ${ scrollDirection === "down" ? "-top-24" : "top-0"} shadow-navbar h-24 z-[2] bg-light transition-all duration-[750ms]`}>
-            <div id='container' className='container items-center flex justify-between mx-auto max-w-[1600px] px-8'>
-                <a id='logo' href='/' className='logo items-center flex'>
-                    <Image priority src={Logo} className='logo h-24 w-24' alt=''/>
+        <div id='header' className={`header sticky ${ scrollDirection === "down" ? "-top-24" : "top-0"} shadow-navbar lg:h-24 h-auto z-[2] bg-light transition-all duration-[750ms]`}>
+            <div id='container' className='container items-center flex justify-between max-w-[1600px] w-full py-4 lg:py-0'>
+                <a id='logo' href='/' className='logo items-center flex lg:static lg:z-0 relative z-5'>
+                    <Image priority src={Logo} className='logo h-24 w-24' height={24}  width={24} alt=''/>
                     <div id='logo__text' className='logo__text font-bold leading-normal font-default text-dark flex'>
                         <span className='text-2xl uppercase relative'>Wolfeiii</span>
                         <span className='relative'>^</span>
                         <span className='text-2xl uppercase relative'>Media</span>
                     </div>
                 </a>
-                <nav>
+                <div className='relative flex flex-1 justify-end lg:hidden lg:flex-initial lg:static lg:z-0 lg:bg-white bg-transparent relative z-5'>
+                    <button
+                        type="button"
+                        className='h-8 w-8'
+                        aria-controls='mobile-menu'
+                        aria-expanded={menuOpen ? 'true' : false}
+                        onClick={() => setMenuOpen(!menuOpen)}
+                    >
+                        <span className='sr-only'>
+                            {menuOpen ? 'Stäng meny' : 'Öppna meny'}
+                        </span>    
+                        <Menu data-hide={menuOpen}/>
+                        <X data-hide={!menuOpen}/>
+                    </button>
+                </div>
+                <nav className='lg:h-auto lg:visible lg:w-auto w-full invisible'>
                     <ul className='items-center flex font-default text-dark leading-none'>
                         <li>
                             <a className='font-semibold py-10 px-7 relative' title='Arbeten' href='/arbeten'>
@@ -25,19 +52,19 @@ export function Header(): JSX.Element {
                             </a>
                         </li>
                         <li>
-                            <a className='font-semibold py-10 px-7 relative' title='Tjänster' href='/tjänster'>
+                            <a className='font-semibold py-10 px-7 relative' title='Tjänster' href='/tjanster'>
                                 Tjänster
                                 <span className='text-main font-bold ml-1 opacity-0'>^</span>
                             </a>
                         </li>
                         <li>
                             <a className='font-semibold py-10 px-7 relative' title='Nyheter & Insikter' href='/nyheter'>
-                                Nyheter & Insikter
+                                Nyheter
                                 <span className='text-main font-bold ml-1 opacity-0'>^</span>
                             </a>
                         </li>
                         <li>
-                            <a className='font-semibold py-10 px-7 relative' title='Karriärer' href='/karriärer'>
+                            <a className='font-semibold py-10 px-7 relative' title='Karriärer' href='/karriarer'>
                                 Karriärer
                                 <span className='text-main font-bold ml-1 opacity-0'>^</span>
                             </a>
@@ -50,6 +77,7 @@ export function Header(): JSX.Element {
                         </li>
                     </ul>
                 </nav>
+                
             </div>
         </div>
     );

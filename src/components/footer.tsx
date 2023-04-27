@@ -5,7 +5,7 @@ export const Footer = () => {
     return (
         <div className='footer bg-[#1c1c1c] text-[#f5f5f2] '>
             <div className='mx-auto max-w-[1600px] px-8'>
-                <div id='footer-top' className='grid grid-cols-3 gap-[clamp(3rem,2.273rem + 3.64vw,5rem)] py-20'>
+                <div id='footer-top' className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-[clamp(3rem,2.273rem + 3.64vw,5rem)] py-20'>
                     <div id='newsletter' className='items-start flex flex-col text-[1.125rem]'>
                         <h6 className='max-w-[19ch] text-3xl  font-normal text-[clamp(1.5rem,1.318rem + .91vw,2rem)] leading-tight mt-0 mb-6'>
                             <span>Gå med i våra</span><br/>
@@ -14,15 +14,20 @@ export const Footer = () => {
                                 <span>insikter</span>
                             </strong>
                         </h6>
-                        <form className='w-full max-w-xs'>
+                        <div className='w-full max-w-xs'>
                             <div className='pt-6 pb-0'>
-                                <input className='mb-4 block transition-shadow delay-150 bg-transparent' type={'email'} placeholder="E-post address" name='email' value={""} required={false}/>
+                                <form>
+                                    <div>
+                                        <input className='bg-transparent block px-3 py-1' type="email" placeholder='E-post address' name='email'></input>
+                                        <span className='block h-px animate-text bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400'/>
+                                    </div>
+                                </form>
                                 <span className='text-transparent h-px text-white bg-clip-text animate-text bg-gradient-to-r from-pink-300 via-purple-300 to-indigo-400'/>
                             </div>
                             <div className='flex justify-end box-border'>
                                 <Button text='Prenumenera' href='/' type={Type.SECONDARY}/>
                             </div>
-                        </form>
+                        </div>
                     </div>
                     <div id='contact' className='font-default text-lg'>
                         <p className=''>
@@ -63,16 +68,16 @@ export const Footer = () => {
                             <li className='mr-4'>
                                 <a className='underline' href='/kontakt'>Kontakt</a>
                             </li>
-                            <li className='before:content-["\u2219"] before:mr-4 ml-4'>
+                            <li className='before:content-["\2219"] before:mr-4 ml-4'>
                                 <a className='underline' href='/jobb'>Jobb</a>
                             </li>
-                            <li className='before:content-["\u2219"] before:mr-4 ml-4'>
+                            <li className='before:content-["\2219"] before:mr-4 ml-4'>
                                 <a className='underline' href='/villkor'>Villkor</a>
                             </li>
-                            <li className='before:content-["\u2219"] before:mr-4 ml-4'>
+                            <li className='before:content-["\2219"] before:mr-4 ml-4'>
                                 <a className='underline' href='/integritetspolicy'>Integritetspolicy</a>
                             </li>
-                            <li className='before:content-["\u2219"] before:mr-4 ml-4'>
+                            <li className='before:content-["\2219"] before:mr-4 ml-4'>
                                 <a className='underline' href='/cookies'>Cookie Policy</a>
                             </li>
                         </ul>
