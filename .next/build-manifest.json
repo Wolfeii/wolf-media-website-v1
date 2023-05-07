@@ -30,15 +30,10 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/arbeten": [
+    "/tjanster": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/arbeten.js"
-    ],
-    "/tack": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/tack.js"
+      "static/chunks/pages/tjanster.js"
     ]
   },
   "ampFirstPages": []

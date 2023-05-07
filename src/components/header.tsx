@@ -18,7 +18,7 @@ export function Header(): JSX.Element {
     const scrollDirection = useScrollDirection();
 
     return (
-        <div id='header' className={`header sticky ${ scrollDirection === "down" ? "-top-24" : "top-0"} shadow-navbar lg:h-24 h-auto z-[2] bg-light transition-all duration-[750ms]`}>
+        <div id='header' className={`header sticky ${ scrollDirection === "down" ? "-top-24" : "top-0"} shadow-navbar lg:h-24 h-auto z-[2] bg-light px-[3rem] lg:px-[4rem] transition-all duration-[750ms]`}>
             <div id='container' className='container items-center flex justify-between max-w-[1600px] w-full py-4 lg:py-0'>
                 <a id='logo' href='/' className='logo items-center flex lg:static lg:z-0 relative z-5'>
                     <Image priority src={Logo} className='logo h-24 w-24' height={24}  width={24} alt=''/>
@@ -46,34 +46,12 @@ export function Header(): JSX.Element {
                 <nav className='lg:h-auto lg:visible lg:w-auto w-full invisible'>
                     <ul className='items-center flex font-default text-dark leading-none'>
                         <li>
-                            <a className='font-semibold py-10 px-7 relative' title='Arbeten' href='/arbeten'>
-                                Arbeten
-                                <span className='text-main font-bold ml-1 opacity-0'>^</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a className='font-semibold py-10 px-7 relative' title='Tjänster' href='/tjanster'>
-                                Tjänster
-                                <span className='text-main font-bold ml-1 opacity-0'>^</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a className='font-semibold py-10 px-7 relative' title='Nyheter & Insikter' href='/nyheter'>
-                                Nyheter
-                                <span className='text-main font-bold ml-1 opacity-0'>^</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a className='font-semibold py-10 px-7 relative' title='Karriärer' href='/karriarer'>
-                                Karriärer
-                                <span className='text-main font-bold ml-1 opacity-0'>^</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a className='font-semibold py-10 px-7 relative' title='Kontakt' href='/kontakt'>
-                                Kontakt
-                                <span className='text-main font-bold ml-1 opacity-0'>^</span>
-                            </a>
+                            {LINKS.map((link) => {
+                                return <a key={link.name} className='font-semibold py-10 px-7 relative' title={link.name} href={link.to}>
+                                    {link.name}
+                                    <span className='text-main font-bold ml-1 opacity-0'>^</span>
+                                </a>
+                            })}
                         </li>
                     </ul>
                 </nav>
